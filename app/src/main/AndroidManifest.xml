@@ -20,6 +20,12 @@
 
         <activity android:name=".ScoreBoardActivity" >
         </activity>
+
+        <activity android:name=".SettingsActivity" >
+        </activity>
+
+        <activity android:name=".HelpActivity" >
+        </activity>
     </application>
 
 </manifest>
