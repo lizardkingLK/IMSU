@@ -61,4 +61,19 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(MainActivity.this, HelpActivity.class);
         startActivity(myIntent);
     }
+
+    // loads Play
+    public void loadPlay(View view) {
+        System.out.println(getResources().getString(R.string.clicked_btn_Play));
+
+        // Get the view from activity_play.xml
+        setContentView(R.layout.activity_play);
+
+        // Get the correct button
+        button = findViewById(R.id.btn_Continue);
+
+        // Start PlayActivity.class
+        Intent myIntent = new Intent(MainActivity.this, PlayActivity.class);
+        startActivity(myIntent);
+    }
 }

@@ -26,6 +26,15 @@
 
         <activity android:name=".HelpActivity" >
         </activity>
+
+        <activity android:name=".PlayActivity" >
+        </activity>
+
+        <activity android:name=".SelectLevelActivity" >
+        </activity>
+
+        <activity android:name=".NewGameActivity" >
+        </activity>
     </application>
 
 </manifest>
