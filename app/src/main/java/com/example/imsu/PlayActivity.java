@@ -1,5 +1,6 @@
 package com.example.imsu;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,9 @@ public class PlayActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     // loads SelectLevel
@@ -38,7 +42,7 @@ public class PlayActivity extends Activity {
         setContentView(R.layout.activity_newgame);
 
         // Get the correct button
-        button = findViewById(R.id.btn_NewGame);
+        button = findViewById(R.id.btn_Quit);
 
         // Start NewGame.class
         Intent myIntent = new Intent(PlayActivity.this, NewGameActivity.class);

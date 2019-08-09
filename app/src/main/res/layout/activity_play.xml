@@ -7,18 +7,18 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btn_Continue"
+        android:id="@+id/btn_Play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_Continue"
-        app:layout_constraintBottom_toTopOf="@+id/btn_NewGame"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Quit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_NewGame"
+        android:id="@+id/btn_Quit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="loadNewGame"
@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Continue" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_Play" />
 
     <Button
         android:id="@+id/btn_SelectLevel"
@@ -39,5 +39,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_NewGame" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_Quit" />
 </androidx.constraintlayout.widget.ConstraintLayout>

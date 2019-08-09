@@ -23,4 +23,5 @@
     <string name="clicked_btn_Play">Clicked Play</string>
     <string name="clicked_btn_SelectLevel">Clicked Select Level</string>
     <string name="clicked_btn_NewGame">Clicked New Game</string>
+    <string name="clicked_btn_Quit">Clicked Quit</string>
 </resources>
