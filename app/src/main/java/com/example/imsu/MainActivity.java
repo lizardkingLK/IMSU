@@ -17,11 +17,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Locate the buttons in activity_main.xml
-        buttonPlay = (Button) findViewById(R.id.btn_Play);
-        buttonScoreBoard = (Button) findViewById(R.id.btn_ScoreBoard);
-        buttonSettings = (Button) findViewById(R.id.btn_Settings);
-        buttonHelp = (Button) findViewById(R.id.btn_Help);
-        buttonQuit = (Button) findViewById(R.id.btn_Quit);
+        buttonPlay = findViewById(R.id.btn_Continue);
+        buttonScoreBoard = findViewById(R.id.btn_ScoreBoard);
+        buttonSettings = findViewById(R.id.btn_Settings);
+        buttonHelp = findViewById(R.id.btn_Help);
+        buttonQuit = findViewById(R.id.btn_NewGame);
 
         // loads Play
         buttonPlay.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Start NewGameActivity.class
                 Intent myIntent = new Intent(MainActivity.this,
-                        NewGameActivity.class);
+                        PlayActivity.class);
                 startActivity(myIntent);
             }
         });

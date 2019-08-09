@@ -18,6 +18,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".PlayActivity" >
+        </activity>
+
         <activity android:name=".ScoreBoardActivity" >
         </activity>
 
@@ -25,9 +28,6 @@
         </activity>
 
         <activity android:name=".HelpActivity" >
-        </activity>
-
-        <activity android:name=".PlayActivity" >
         </activity>
 
         <activity android:name=".SelectLevelActivity" >
