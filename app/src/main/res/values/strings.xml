@@ -11,6 +11,7 @@
     <string name="btn_Continue">Continue</string>
     <string name="message_enterName">Enter Your Name</string>
     <string name="hint_Enter_your_name">Name..</string>
+    <string name="txtView_title_play">Play</string>
     <string name="txtView_title_scoreboard">Scoreboard</string>
     <string name="txtView_title_settings">Settings</string>
     <string name="txtView_title_help">Help</string>

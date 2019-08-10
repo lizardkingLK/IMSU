@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/SelectLevelLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_background_gradient">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="288dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="16dp"
         android:text="@string/txtView_title_selectLevel"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textColor="@color/colorTextLight"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
