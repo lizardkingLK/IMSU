@@ -7,4 +7,5 @@
     <color name="colorGradientDark">#00E03D</color>
     <color name="colorTextLight">#F2F2F2</color>
     <color name="colorTextDark">#333333</color>
+    <color name="colorGradientGameLight">#D6FFE1</color>
 </resources>
