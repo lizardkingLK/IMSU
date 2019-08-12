@@ -10,6 +10,7 @@
     <string name="btn_NewGame">New Game</string>
     <string name="btn_Continue">Continue</string>
     <string name="message_enterName">Enter Your Name</string>
+    <string name="warning_enterName">Give A Name First...</string>
     <string name="hint_Enter_your_name">Name..</string>
     <string name="txtView_title_play">Play</string>
     <string name="txtView_title_scoreboard">Scoreboard</string>
@@ -28,4 +29,6 @@
     <string name="clicked_btn_Continue">Clicked Continue</string>
     <string name="clicked_prism">Clicked Prism</string>
     <string name="content_description_prism">Prism</string>
+    <string name="txt_nullValue_playerName" />
+    <string name="txt_nullValue_playerScore" />
 </resources>

@@ -2,7 +2,7 @@ package com.example.imsu;
 
 public class Player {
     private String playerName;
-    private String playerScore;
+    private int playerScore;
     private static Player playerSingleton;
 
     public static Player getInstance() {
@@ -28,11 +28,11 @@ public class Player {
         this.playerName = playerName;
     }
 
-    public String getPlayerScore() {
+    public int getPlayerScore() {
         return playerScore;
     }
 
-    public void setPlayerScore(String playerScore) {
+    public void setPlayerScore(int playerScore) {
         this.playerScore = playerScore;
     }
 }

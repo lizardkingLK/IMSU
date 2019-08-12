@@ -3,16 +3,21 @@ package com.example.imsu;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class NewGameActivity extends Activity {
     private Player newPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Button buttonOK;
+        final Button buttonOK;
         final EditText editTextPlayerName;
 
         super.onCreate(savedInstanceState);
@@ -27,14 +32,26 @@ public class NewGameActivity extends Activity {
             @Override
             public void onClick(View view) {
                 String playerName = editTextPlayerName.getText().toString();
-                if(playerName != null) {
+
+                Toast playerNameToast = Toast.makeText(getApplicationContext(), playerName, Toast.LENGTH_LONG);
+                playerNameToast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 16);
+
+                if (playerName.isEmpty()) {
+                    playerNameToast.setText(getResources().getString(R.string.warning_enterName));
+                    playerNameToast.show();
+                }
+                else {
+                    playerNameToast.show();
+
                     newPlayer = Player.getInstance();
-                    newPlayer.setPlayerName(playerName);
+                    newPlayer.setPlayerName(playerName.toString());
 
                     Intent myIntent = new Intent(NewGameActivity.this, GameActivity.class);
                     startActivity(myIntent);
                 }
             }
         });
+
     }
+
 }
