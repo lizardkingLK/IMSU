@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/GameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_imsu_2"
+    tools:context=".GameActivity">
+
+    <ImageView
+        android:id="@+id/imgView_prism_1"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/content_description_prism"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/satelite_imsu_1" />
+
+    <ImageView
+        android:id="@+id/imgView_prism_2"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="200dp"
+        android:contentDescription="@string/content_description_prism"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/satelite_imsu_2" />
+
+    <TextView
+        android:id="@+id/txtView_playerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/txt_nullValue_playerName"
+        android:textColor="@color/colorTextLight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgView_prism_3"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        android:layout_marginBottom="200dp"
+        android:contentDescription="@string/content_description_prism"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgView_prism_2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/satelite_imsu_3" />
+
+    <ImageView
+        android:id="@+id/imgView_skb"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/content_description_skb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/skb_imsu" />
+
+    <ImageView
+        android:id="@+id/imgView_star"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/content_description_star"
+        app:layout_constraintBottom_toTopOf="@+id/imgView_prism_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_skb"
+        app:srcCompat="@drawable/star_imsu_1" />
+
+    <ImageView
+        android:id="@+id/imgView_earth"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="236dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="145dp"
+        android:contentDescription="@string/content_description_earth"
+        app:layout_constraintBottom_toTopOf="@+id/imgView_prism_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgView_star"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/earth_imsu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

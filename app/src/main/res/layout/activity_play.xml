@@ -4,25 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/PlayLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_background_gradient">
 
     <Button
         android:id="@+id/btn_Continue"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/drawable_button_rounded"
         android:text="@string/btn_Continue"
-        app:layout_constraintBottom_toTopOf="@+id/btn_NewGame"
+        android:textColor="@color/colorTextLight"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/btn_NewGame"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:onClick="loadNewGame"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/drawable_button_rounded"
         android:text="@string/btn_NewGame"
+        android:textColor="@color/colorTextLight"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_SelectLevel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -31,13 +41,31 @@
 
     <Button
         android:id="@+id/btn_SelectLevel"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:onClick="loadSelectLevel"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/drawable_button_rounded"
         android:text="@string/btn_SelectLevel"
+        android:textColor="@color/colorTextLight"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/txtView_title_play"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorTextLight"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_NewGame" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
