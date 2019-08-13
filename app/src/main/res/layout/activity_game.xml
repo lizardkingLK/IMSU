@@ -10,25 +10,25 @@
 
     <ImageView
         android:id="@+id/imgView_prism_1"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/content_description_prism"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/prism_imsu_1" />
+        app:srcCompat="@drawable/satelite_imsu_1" />
 
     <ImageView
         android:id="@+id/imgView_prism_2"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="168dp"
         android:contentDescription="@string/content_description_prism"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/prism_imsu_2" />
+        app:srcCompat="@drawable/satelite_imsu_2" />
 
     <TextView
         android:id="@+id/txtView_playerName"
@@ -37,6 +37,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/txt_nullValue_playerName"
+        android:textColor="@color/colorTextLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
