@@ -12,13 +12,13 @@
     <string name="message_enterName">Enter Your Name</string>
     <string name="warning_enterName">Give A Name First...</string>
     <string name="hint_Enter_your_name">Name..</string>
-    <string name="txtView_title_play">Play</string>
-    <string name="txtView_title_scoreboard">Scoreboard</string>
-    <string name="txtView_title_settings">Settings</string>
-    <string name="txtView_title_help">Help</string>
-    <string name="txtView_title_selectLevel">Select Level</string>
+    <string name="txtView_title_play">PLAY</string>
+    <string name="txtView_title_scoreboard">SCOREBOARD</string>
+    <string name="txtView_title_settings">SETTINGS</string>
+    <string name="txtView_title_help">HELP</string>
+    <string name="txtView_title_selectLevel">SELECT LEVEL</string>
     <string name="txtView_title_enterYourName">Enter Your Name</string>
-    <string name="txtView_title_newGame">New Game</string>
+    <string name="txtView_title_newGame">NEW GAME</string>
     <string name="clicked_btn_Scoreboard">Clicked Scoreboard</string>
     <string name="clicked_btn_Settings">Clicked Settings</string>
     <string name="clicked_btn_Help">Clicked Help</string>
@@ -31,4 +31,7 @@
     <string name="content_description_prism">Prism</string>
     <string name="txt_nullValue_playerName" />
     <string name="txt_nullValue_playerScore" />
+    <string name="content_description_skb">skb</string>
+    <string name="content_description_star">Star</string>
+    <string name="content_description_earth">Earth</string>
 </resources>

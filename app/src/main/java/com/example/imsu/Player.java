@@ -20,6 +20,11 @@ public class Player {
         super();
     }
 
+    public Player(String playerName, int playerScore) {
+        this.playerName = playerName;
+        this.playerScore = playerScore;
+    }
+
     public String getPlayerName() {
         return playerName;
     }

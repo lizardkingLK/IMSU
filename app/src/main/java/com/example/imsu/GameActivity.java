@@ -16,7 +16,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        final ImageView imgView1,imgView2;
+        final ImageView imgView1,imgView2,imgView3;
         final TextView textView_playerName;
 
         // set current player
@@ -25,6 +25,7 @@ public class GameActivity extends AppCompatActivity {
         // set value for prisms
         imgView1 = findViewById(R.id.imgView_prism_1);
         imgView2 = findViewById(R.id.imgView_prism_2);
+        imgView3 = findViewById(R.id.imgView_prism_3);
 
         // set player name
         textView_playerName = findViewById(R.id.txtView_playerName);
@@ -50,7 +51,15 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
+        imgView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(getResources().getString(R.string.clicked_prism),getResources().getString(R.string.clicked_prism));
 
+                // call to rotate the prism
+                Prism.rotateClockWise(imgView3);
+            }
+        });
 
     }
 }
