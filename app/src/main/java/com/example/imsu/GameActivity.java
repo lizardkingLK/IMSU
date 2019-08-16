@@ -2,12 +2,14 @@ package com.example.imsu;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -128,6 +130,8 @@ public class GameActivity extends AppCompatActivity {
 
         // when blasting checks if the user aligned all prisms correctly
         btn_blast.setOnClickListener(new View.OnClickListener() {
+            int winFlag = 0;
+
             @Override
             public void onClick(View view) {
                 Log.i(getResources().getString(R.string.clicked_blast),getResources().getString(R.string.clicked_blast));
@@ -146,10 +150,25 @@ public class GameActivity extends AppCompatActivity {
                             animateX(imgView7_lb2, animFadeIn);
                             animateX(imgView8_lb3, animFadeIn);
                             animateX(imgView9_lb4, animFadeIn);
+
+                            // hide light beams
+                            imgView6_lb1.setVisibility(View.VISIBLE);
+                            imgView7_lb2.setVisibility(View.VISIBLE);
+                            imgView8_lb3.setVisibility(View.VISIBLE);
+                            imgView9_lb4.setVisibility(View.VISIBLE);
+
+                            // shows level completed
+                            Toast levelCompletedToast = Toast.makeText(getApplicationContext(), R.string.level_completed, Toast.LENGTH_LONG);
+                            levelCompletedToast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 16);
+                            levelCompletedToast.show();
+
+                            // sets winning
+                            winFlag = 1;
                         }
                     }
                 }
-                else {
+
+                if(winFlag == 0) {
                     rating--;
                     System.out.println(rating);
 
@@ -172,14 +191,20 @@ public class GameActivity extends AppCompatActivity {
                     }
                 }
 
-                if(rating == 0 || rating < 0)
+                if (rating == 0 || rating < 0) {
                     System.out.println(getResources().getString(R.string.level_failed));
+
+                    // shows level failed
+                    Toast levelFailedToast = Toast.makeText(getApplicationContext(), R.string.level_failed, Toast.LENGTH_LONG);
+                    levelFailedToast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 16);
+                    levelFailedToast.show();
+                }
             }
         });
 
     }
 
-    // Fading Animations
+    // fading Animations
     public void animateX(ImageView iv, Animation anim) {
         anim.reset();
         iv.clearAnimation();
