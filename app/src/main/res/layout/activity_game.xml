@@ -37,7 +37,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/txt_nullValue_playerName"
-        android:textColor="@color/colorTextLight"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -60,19 +60,120 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/content_description_skb"
+        app:layout_constraintEnd_toStartOf="@+id/imgView_lightbeam_h1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/skb_imsu" />
 
     <ImageView
         android:id="@+id/imgView_earth"
-        android:layout_width="75sp"
-        android:layout_height="75sp"
-        android:layout_marginEnd="213dp"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
         android:contentDescription="@string/content_description_earth"
         app:layout_constraintBottom_toTopOf="@+id/imgView_prism_3"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgView_lightbeam_v2"
+        app:layout_constraintStart_toStartOf="@+id/imgView_lightbeam_v2"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501"
         app:srcCompat="@drawable/earth_imsu" />
+
+    <ImageView
+        android:id="@+id/imgView_lightbeam_h1"
+        android:layout_width="0dp"
+        android:layout_height="75sp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/content_description_lightbeam"
+        app:layout_constraintEnd_toStartOf="@+id/imgView_prism_1"
+        app:layout_constraintStart_toEndOf="@+id/imgView_skb"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lightbeam_imsu_vertical_unit"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imgView_lightbeam_v1"
+        android:layout_width="75sp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/content_description_lightbeam"
+        app:layout_constraintBottom_toTopOf="@+id/imgView_prism_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_prism_1"
+        app:srcCompat="@drawable/lightbeam_imsu_horizontal_unit"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imgView_lightbeam_h2"
+        android:layout_width="119dp"
+        android:layout_height="75sp"
+        android:layout_marginBottom="200dp"
+        android:contentDescription="@string/content_description_lightbeam"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgView_prism_2"
+        app:layout_constraintStart_toEndOf="@+id/imgView_prism_3"
+        app:srcCompat="@drawable/lightbeam_imsu_vertical_unit"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imgView_lightbeam_v2"
+        android:layout_width="75sp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/content_description_lightbeam"
+        app:layout_constraintBottom_toTopOf="@+id/imgView_prism_3"
+        app:layout_constraintEnd_toStartOf="@+id/imgView_lightbeam_h2"
+        app:layout_constraintStart_toStartOf="@+id/imgView_prism_3"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_earth"
+        app:srcCompat="@drawable/lightbeam_imsu_horizontal_unit"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_blast"
+        android:layout_width="75sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/drawable_button_rounded"
+        android:text="@string/btn_Blast"
+        android:textColor="@color/colorTextLight"
+        android:textColorHighlight="@color/colorTextDark"
+        android:textColorHint="@color/colorGradientGameLight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_rating"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btn_blast"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imgView_rating_A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/content_description_rating_star"
+            app:srcCompat="@drawable/rating_star_imsu_filled" />
+
+        <ImageView
+            android:id="@+id/imgView_rating_B"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/content_description_rating_star"
+            app:srcCompat="@drawable/rating_star_imsu_filled" />
+
+        <ImageView
+            android:id="@+id/imgView_rating_C"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/content_description_rating_star"
+            app:srcCompat="@drawable/rating_star_imsu_filled" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
