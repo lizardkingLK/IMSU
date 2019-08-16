@@ -28,11 +28,17 @@
     <string name="clicked_btn_Quit">Clicked Quit</string>
     <string name="clicked_btn_Continue">Clicked Continue</string>
     <string name="clicked_prism">Clicked Prism</string>
+    <string name="clicked_blast">Clicked Blast</string>
     <string name="content_description_prism">Prism</string>
+    <string name="level_failed">LEVEL FAILED</string>
+    <string name="level_completed">LEVEL COMPLETED</string>
     <string name="txt_nullValue_playerName" />
     <string name="txt_nullValue_playerScore" />
     <string name="content_description_skb">skb</string>
     <string name="content_description_star">Star</string>
     <string name="content_description_earth">Earth</string>
     <string name="content_description_lightbeam">LightBeam</string>
+    <string name="btn_Blast">Blast</string>
+    <string name="content_description_rating_star">StarRating</string>
+
 </resources>
