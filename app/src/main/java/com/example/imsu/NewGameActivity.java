@@ -43,7 +43,7 @@ public class NewGameActivity extends Activity {
                     newPlayer = Player.getInstance();
                     newPlayer.setPlayerName(playerName);
 
-                    Intent myIntent = new Intent(NewGameActivity.this, GameActivity.class);
+                    Intent myIntent = new Intent(NewGameActivity.this, GameActivity_A.class);
                     startActivity(myIntent);
                 }
             }
