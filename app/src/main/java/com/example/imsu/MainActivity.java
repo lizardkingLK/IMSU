@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
            public void onClick(View arg0) {
                System.out.println(getResources().getString(R.string.clicked_btn_Help));
 
-               // Start HelpActivity.class
+               // Start HelpActivity.classs
                Intent myIntent = new Intent(MainActivity.this,
                        HelpActivity.class);
                startActivity(myIntent);
