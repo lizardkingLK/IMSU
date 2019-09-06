@@ -3,7 +3,6 @@ package com.example.imsu;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class PlayActivity extends Activity {
@@ -21,39 +20,33 @@ public class PlayActivity extends Activity {
         buttonSelectLevel = findViewById(R.id.btn_SelectLevel);
 
         // loads recent Level
-        buttonContinue.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                System.out.println(getResources().getString(R.string.clicked_btn_Continue));
+        buttonContinue.setOnClickListener(arg0 -> {
+            System.out.println(getResources().getString(R.string.clicked_btn_Continue));
 
-                // Start ContinueActivity.class
-                Intent myIntent = new Intent(PlayActivity.this,
-                        PlayActivity.class);
-                startActivity(myIntent);
-            }
+            // Start ContinueActivity.class
+            Intent myIntent = new Intent(PlayActivity.this,
+                    PlayActivity.class);
+            startActivity(myIntent);
         });
 
         // loads new Game
-        buttonNewGame.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                System.out.println(getResources().getString(R.string.clicked_btn_Play));
+        buttonNewGame.setOnClickListener(arg0 -> {
+            System.out.println(getResources().getString(R.string.clicked_btn_Play));
 
-                // Start NewGameActivity.class
-                Intent myIntent = new Intent(PlayActivity.this,
-                        NewGameActivity.class);
-                startActivity(myIntent);
-            }
+            // Start NewGameActivity.class
+            Intent myIntent = new Intent(PlayActivity.this,
+                    NewGameActivity.class);
+            startActivity(myIntent);
         });
 
         // loads previous Levels
-        buttonSelectLevel.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                System.out.println(getResources().getString(R.string.clicked_btn_SelectLevel));
+        buttonSelectLevel.setOnClickListener(arg0 -> {
+            System.out.println(getResources().getString(R.string.clicked_btn_SelectLevel));
 
-                // Start SelectLevelActivity.class
-                Intent myIntent = new Intent(PlayActivity.this,
-                        SelectLevelActivity.class);
-                startActivity(myIntent);
-            }
+            // Start SelectLevelActivity.class
+            Intent myIntent = new Intent(PlayActivity.this,
+                    SelectLevelActivity.class);
+            startActivity(myIntent);
         });
     }
 

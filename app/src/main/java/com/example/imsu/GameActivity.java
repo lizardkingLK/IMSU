@@ -1,14 +1,6 @@
 package com.example.imsu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class GameActivity extends AppCompatActivity {
-    public void saveGame() {
-
-    }
-
-    public void loadGame() {
-
-    }
-
+public interface GameActivity {
+    void saveGame();
+    void loadGame();
 }
