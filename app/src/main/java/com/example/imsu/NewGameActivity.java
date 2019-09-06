@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -25,27 +24,24 @@ public class NewGameActivity extends Activity {
         buttonOK = findViewById(R.id.btn_oK_playerName);
 
         // loads new game
-        buttonOK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String playerName = editTextPlayerName.getText().toString();
+        buttonOK.setOnClickListener(view -> {
+            String playerName = editTextPlayerName.getText().toString();
 
-                Toast playerNameToast = Toast.makeText(getApplicationContext(), playerName, Toast.LENGTH_LONG);
-                playerNameToast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 16);
+            Toast playerNameToast = Toast.makeText(getApplicationContext(), playerName, Toast.LENGTH_LONG);
+            playerNameToast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 16);
 
-                if (playerName.isEmpty()) {
-                    playerNameToast.setText(getResources().getString(R.string.warning_enterName));
-                    playerNameToast.show();
-                }
-                else {
-                    playerNameToast.show();
+            if (playerName.isEmpty()) {
+                playerNameToast.setText(getResources().getString(R.string.warning_enterName));
+                playerNameToast.show();
+            }
+            else {
+                playerNameToast.show();
 
-                    newPlayer = Player.getInstance();
-                    newPlayer.setPlayerName(playerName);
+                newPlayer = Player.getInstance();
+                newPlayer.setPlayerName(playerName);
 
-                    Intent myIntent = new Intent(NewGameActivity.this, GameActivity_A.class);
-                    startActivity(myIntent);
-                }
+                Intent myIntent = new Intent(NewGameActivity.this, GameActivity_A.class);
+                startActivity(myIntent);
             }
         });
 

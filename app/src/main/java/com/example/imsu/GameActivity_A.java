@@ -1,5 +1,6 @@
 package com.example.imsu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class GameActivity_A extends AppCompatActivity {
+public class GameActivity_A extends AppCompatActivity implements GameActivity {
     // initial states of prisms
     private static int i1 = 2;
     private static int i2 = 4;
@@ -87,45 +88,36 @@ public class GameActivity_A extends AppCompatActivity {
         animateX(imgView5_skb, animFadeIn);
 
         // prism 1 on click listener
-        imgView1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(getResources().getString(R.string.clicked_prism),getResources().getString(R.string.clicked_prism));
+        imgView1.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.clicked_prism),getResources().getString(R.string.clicked_prism));
 
-                // increases rotate count
-                prismRotateCount[0]++;
+            // increases rotate count
+            prismRotateCount[0]++;
 
-                // call to rotate the prism
-                Prism.rotateClockWise(imgView1);
-            }
+            // call to rotate the prism
+            Prism.rotateClockWise(imgView1);
         });
 
         // prism 2 on click listener
-        imgView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(getResources().getString(R.string.clicked_prism),getResources().getString(R.string.clicked_prism));
+        imgView2.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.clicked_prism),getResources().getString(R.string.clicked_prism));
 
-                // increases rotate count
-                prismRotateCount[1]++;
+            // increases rotate count
+            prismRotateCount[1]++;
 
-                // call to rotate the prism
-                Prism.rotateCounterClockWise(imgView2);
-            }
+            // call to rotate the prism
+            Prism.rotateCounterClockWise(imgView2);
         });
 
         // prism 3 on click listener
-        imgView3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(getResources().getString(R.string.clicked_prism),getResources().getString(R.string.clicked_prism));
+        imgView3.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.clicked_prism),getResources().getString(R.string.clicked_prism));
 
-                // increases rotate count
-                prismRotateCount[2]++;
+            // increases rotate count
+            prismRotateCount[2]++;
 
-                // call to rotate the prism
-                Prism.rotateClockWise(imgView3);
-            }
+            // call to rotate the prism
+            Prism.rotateClockWise(imgView3);
         });
 
         // when blasting checks if the user aligned all prisms correctly
@@ -174,6 +166,13 @@ public class GameActivity_A extends AppCompatActivity {
 
                             // sets winning
                             winFlag = 1;
+
+                            // saves level and score
+
+                            // goes to new level
+//                            Intent newLevelIntent = new Intent(GameActivity_A.this, GameActivity_B.class);
+//                            startActivity(newLevelIntent);
+
                         }
                     }
                 }
@@ -233,8 +232,13 @@ public class GameActivity_A extends AppCompatActivity {
         return countState%4 == 0 || initialState%4 == 0;
     }
 
-    public void run() {
+    @Override
+    public void saveGame() {
 
     }
 
+    @Override
+    public void loadGame() {
+
+    }
 }
