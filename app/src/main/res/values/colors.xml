@@ -9,4 +9,8 @@
     <color name="colorTextDark">#333333</color>
     <color name="colorGradientGameDark">#2C3E50</color>
     <color name="colorGradientGameLight">#4CA1AF</color>
+    <color name="colorGradientMainDark">#232526</color>
+    <color name="colorGradientMainLight">#414345</color>
+    <color name="colorGradientFragmentDark">#1F1C18</color>
+    <color name="colorGradientFragmentLight">#8E0E00</color>
 </resources>

@@ -5,6 +5,7 @@ public class Player {
     private int playerScore;
     private int levelScore;
     private int currentLevel;
+    private int totalScore;
     private static Player playerSingleton;
 
     public static Player getInstance() {
@@ -22,11 +23,12 @@ public class Player {
         super();
     }
 
-    public Player(String playerName, int playerScore, int levelScore, int currentLevel) {
+    public Player(String playerName, int playerScore, int levelScore, int currentLevel, int totalScore) {
         this.playerName = playerName;
         this.playerScore = playerScore;
         this.levelScore = levelScore;
         this.currentLevel = currentLevel;
+        this.totalScore = totalScore;
     }
 
     public String getPlayerName() {
@@ -60,4 +62,13 @@ public class Player {
     public void setCurrentLevel(int currentLevel) {
         this.currentLevel = currentLevel;
     }
+
+    public int getTotalScore() {
+        return totalScore;
+    }
+
+    public void setTotalScore(int totalScore) {
+        this.totalScore = totalScore;
+    }
+
 }

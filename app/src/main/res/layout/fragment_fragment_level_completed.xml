@@ -5,7 +5,7 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/drawable_background_gradient_game"
+    android:background="@drawable/drawable_background_gradient_level_completed"
     android:tag="@string/fragment_dialog"
     tools:context=".FragmentLevelCompleted">
 
@@ -20,7 +20,7 @@
         android:background="@drawable/drawable_button_transparent"
         android:gravity="center|top|center_vertical"
         android:text="@string/level_completed"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

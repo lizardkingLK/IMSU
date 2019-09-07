@@ -1,5 +1,7 @@
 package com.example.imsu;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -12,8 +14,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.app.DialogFragment;
+
 
 public class GameActivity_A extends AppCompatActivity implements GameActivity {
+    // FragmentTransaction declaration
+    FragmentTransaction ft;
+
     // initial states of prisms
     private static int i1 = 2;
     private static int i2 = 4;
@@ -166,11 +173,27 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
                             // sets winning
                             winFlag = 1;
 
-                            // saves level and score
+                            try {
+                                Thread.sleep(1000);
+                                // saves level and score
 
 
-                            // goes to new level
+                                // load game completed
+                                ft = getFragmentManager().beginTransaction();
+                                String tag_A = getResources().getString(R.string.fragment_dialog);
+                                Fragment prev = getFragmentManager().findFragmentByTag(tag_A);
+                                if(prev != null) {
+                                    ft.remove(prev);
+                                }
 
+                                ft.addToBackStack(null);
+
+                                DialogFragment dialogFragment = new FragmentLevelCompleted();
+                                dialogFragment.show(ft, tag_A);
+                            }
+                            catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
 
                         }
                     }
