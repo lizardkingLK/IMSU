@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/drawable_background_gradient_game"
+    android:tag="@string/fragment_dialog"
     tools:context=".FragmentLevelCompleted">
 
     <!-- TODO: Update blank fragment layout -->
