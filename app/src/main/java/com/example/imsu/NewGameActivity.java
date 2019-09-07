@@ -13,11 +13,11 @@ public class NewGameActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final Button buttonOK;
-        final EditText editTextPlayerName;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newgame);
+
+        final Button buttonOK;
+        final EditText editTextPlayerName;
 
         // set ok button
         editTextPlayerName = findViewById(R.id.editText_newGame_playerName);

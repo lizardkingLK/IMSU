@@ -1,34 +1,13 @@
 package com.example.imsu;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.util.AttributeSet;
-import android.view.View;
+import android.os.Bundle;
 
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class GameActivity_B extends View implements GameActivity {
-    public GameActivity_B(Context context, @Nullable AttributeSet attrs) {
-        super(context,attrs);
-    }
-
+public class GameActivity_B extends AppCompatActivity {
     @Override
-    protected void onDraw(Canvas canvas) {
-        canvas.drawColor(getResources().getColor(R.color.colorGradientGameDark));
-
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game_b);
     }
-
-
-
-    @Override
-    public void saveGame() {
-
-    }
-
-    @Override
-    public void loadGame() {
-
-    }
-
-
 }
