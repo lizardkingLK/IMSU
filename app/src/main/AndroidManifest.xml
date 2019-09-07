@@ -33,6 +33,12 @@
         </activity>
         <activity android:name=".GameActivity_A">
         </activity>
+        <activity android:name=".GameActivity_B">
+        </activity>
+        <activity android:name=".GameActivity_C">
+        </activity>
+        <activity android:name=".GameActivity_D">
+        </activity>
     </application>
 
 </manifest>

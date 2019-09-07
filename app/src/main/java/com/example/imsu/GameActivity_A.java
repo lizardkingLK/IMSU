@@ -1,6 +1,5 @@
 package com.example.imsu;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -169,9 +168,9 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
 
                             // saves level and score
 
+
                             // goes to new level
-//                            Intent newLevelIntent = new Intent(GameActivity_A.this, GameActivity_B.class);
-//                            startActivity(newLevelIntent);
+
 
                         }
                     }
