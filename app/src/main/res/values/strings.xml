@@ -47,5 +47,6 @@
     <string name="levelScore">(levelScore)</string>
     <string name="Next">NEXT</string>
     <string name="level">(level)</string>
+    <string name="fragment_dialog">dialog</string>
 
 </resources>
