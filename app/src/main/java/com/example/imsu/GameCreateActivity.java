@@ -15,7 +15,7 @@ public class GameCreateActivity extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawColor(Color.TRANSPARENT);
+        canvas.drawColor(Color.RED);
 
     }
 

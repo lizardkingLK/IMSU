@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "136859858213",
+    "firebase_url": "https://imsu-11ecd.firebaseio.com",
+    "project_id": "imsu-11ecd",
+    "storage_bucket": "imsu-11ecd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136859858213:android:f08f1af79be7fad82696cc",
+        "android_client_info": {
+          "package_name": "com.example.imsu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136859858213-u9qij1pqrtmdklfs2a1uvl23o0cu9cub.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.imsu",
+            "certificate_hash": "488ba9d2625689a1124f8eb55e785b556626dca9"
+          }
+        },
+        {
+          "client_id": "136859858213-sp804geqkv1n9rb4mf7mvc63kan95pk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKMlZoX04RtWA5YuydncZUv2WiFxHBaYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136859858213-sp804geqkv1n9rb4mf7mvc63kan95pk9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

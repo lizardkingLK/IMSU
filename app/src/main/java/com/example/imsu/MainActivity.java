@@ -2,21 +2,24 @@ package com.example.imsu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    MediaPlayer mediaPlayer;
+    private MediaPlayer mainTheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.main_menu_theme_imsu);
+        // theme song declaration
+        mainTheme = Audio.setMediaPlayer(getApplicationContext());
 
+        // main view buttons
         Button buttonPlay,buttonScoreBoard,buttonSettings,buttonHelp,buttonQuit;
 
         // Locate the buttons in activity_main.xml
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         buttonHelp.setOnClickListener(arg0 -> {
             System.out.println(getResources().getString(R.string.clicked_btn_Help));
 
-            // Start HelpActivity.classs
+            // Start HelpActivity.class
             Intent myIntent = new Intent(MainActivity.this,
                     HelpActivity.class);
             startActivity(myIntent);
@@ -73,25 +76,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // theme starts playing
     @Override
     protected void onResume() {
         super.onResume();
 
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
+        mainTheme.setLooping(true);
+        mainTheme.start();
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
 
-        mediaPlayer.pause();
-    }
-
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-
-        mediaPlayer.start();
-    }
 }
