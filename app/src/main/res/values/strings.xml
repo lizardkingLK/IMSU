@@ -27,6 +27,7 @@
     <string name="clicked_btn_NewGame">Clicked New Game</string>
     <string name="clicked_btn_Quit">Clicked Quit</string>
     <string name="clicked_btn_Continue">Clicked Continue</string>
+    <string name="clicked_btn_Back">Clicked Back</string>
     <string name="clicked_prism">Clicked Prism</string>
     <string name="clicked_blast">Clicked Blast</string>
     <string name="content_description_prism">Prism</string>
@@ -38,8 +39,16 @@
     <string name="content_description_star">Star</string>
     <string name="content_description_earth">Earth</string>
     <string name="content_description_lightbeam">LightBeam</string>
-    <string name="btn_Blast">Blast</string>
     <string name="content_description_rating_star">StarRating</string>
+    <string name="btn_Blast">Blast</string>
+    <string name="settings_audio_audio">Audio</string>
+    <string name="settings_audio_SFX">SFX</string>
+    <string name="settings_audio_music">Music</string>
+    <string name="settings_audio_back">BACK</string>
+    <string name="help_how_to_play">How to Play?</string>
+    <string name="help_align_the_satelites_to_destroy_the_planet">Align the Satelites to Destroy the Planet</string>
+    <string name="help_tap_objects_to_rotate">Tap Objects To Rotate</string>
+    <string name="help_press_blast_to_win">Press \'BLAST\' to Win</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -48,5 +57,7 @@
     <string name="Next">NEXT</string>
     <string name="level">(level)</string>
     <string name="fragment_dialog">dialog</string>
+    <string name="content_description_pointer">Ponter</string>
+    <string name="content_description_blast">Blast</string>
 
 </resources>
