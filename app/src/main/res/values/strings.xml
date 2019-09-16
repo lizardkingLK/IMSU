@@ -31,7 +31,6 @@
     <string name="clicked_prism">Clicked Prism</string>
     <string name="clicked_blast">Clicked Blast</string>
     <string name="content_description_prism">Prism</string>
-    <string name="level_failed">LEVEL FAILED</string>
     <string name="level_completed">LEVEL COMPLETED</string>
     <string name="txt_nullValue_playerName" />
     <string name="txt_nullValue_playerScore" />
@@ -59,5 +58,9 @@
     <string name="fragment_dialog">dialog</string>
     <string name="content_description_pointer">Ponter</string>
     <string name="content_description_blast">Blast</string>
+    <string name="content_description_wormhole">WormHole</string>
+    <string name="Retry">RETRY</string>
+    <string name="level_failed">LEVEL FAILED</string>
+    <string name="fragment_dialog_failed">dialog failed</string>
 
 </resources>
