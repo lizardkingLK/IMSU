@@ -1,6 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/GameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_imsu_2_secondary">
 
+    <ImageView
+        android:id="@+id/imgView_prism_c1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/content_description_prism"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/satelite_imsu_1" />
+
+    <ImageView
+        android:id="@+id/imgView_prism_c2"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/content_description_prism"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/satelite_imsu_1" />
+
+    <ImageView
+        android:id="@+id/imgView_prism_c3"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/content_description_prism"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_prism_c1"
+        app:srcCompat="@drawable/satelite_imsu_3" />
+
+    <ImageView
+        android:id="@+id/imgView_prism_c4"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="96dp"
+        android:contentDescription="@string/content_description_prism"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_prism_c2"
+        app:srcCompat="@drawable/satelite_imsu_3" />
+
+    <ImageView
+        android:id="@+id/imgView_prism_c5"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/content_description_prism"
+        app:layout_constraintBottom_toBottomOf="@+id/imgView_prism_c6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgView_prism_c6"
+        app:srcCompat="@drawable/satelite_imsu_1" />
+
+    <ImageView
+        android:id="@+id/imgView_prism_c6"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="40dp"
+        android:contentDescription="@string/content_description_prism"
+        app:layout_constraintBottom_toTopOf="@+id/imgView_wh_c2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/satelite_imsu_1" />
+
+    <ImageView
+        android:id="@+id/imgView_skb_c"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="112dp"
+        android:contentDescription="@string/content_description_skb"
+        android:rotation="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_prism_c5"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/skb_imsu" />
+
+    <ImageView
+        android:id="@+id/imgView_wh_c2"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="112dp"
+        android:contentDescription="@string/content_description_wormhole"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/wormhole_imsu_secondary" />
+
+    <ImageView
+        android:id="@+id/imgView_wh_c1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/content_description_wormhole"
+        app:layout_constraintEnd_toEndOf="@+id/imgView_skb_c"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imgView_skb_c"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_prism_c3"
+        app:srcCompat="@drawable/wormhole_imsu_secondary" />
 </androidx.constraintlayout.widget.ConstraintLayout>
