@@ -157,9 +157,9 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
                 int p3 = prismRotateCount[2];
 
                 // checking part
-                if(alignmentCheck(p1,i1)) {
-                    if(alignmentCheck(p2,i2)) {
-                        if(alignmentCheck(p3,i3)) {
+                if(alignmentCheck(p1)) {
+                    if(alignmentCheck(p2)) {
+                        if(alignmentCheck(p3)) {
                             System.out.println(getResources().getString(R.string.level_completed));
 
                             ImageView[] imgs = {imgView6_lb1,imgView7_lb2,imgView8_lb3,imgView9_lb4};
@@ -270,7 +270,7 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
     }
 
     // alignment checker
-    public boolean alignmentCheck(int countState, int initialState) {
+    public boolean alignmentCheck(int countState) {
         return countState%4 == 0;
     }
 

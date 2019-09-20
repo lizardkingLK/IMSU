@@ -8,7 +8,7 @@
     android:background="@drawable/background_imsu_2_secondary">
 
     <Button
-        android:id="@+id/btn_blast3"
+        android:id="@+id/btn_blast"
         android:layout_width="75sp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -28,7 +28,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/btn_blast3"
+        app:layout_constraintBottom_toTopOf="@+id/btn_blast"
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
@@ -57,12 +57,13 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/txtView_playerName3"
-        android:layout_width="0dp"
-        android:layout_height="13dp"
+        android:id="@+id/txtView_playerName"
+        android:layout_width="152dp"
+        android:layout_height="49dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/txt_nullValue_playerName"
+        android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
