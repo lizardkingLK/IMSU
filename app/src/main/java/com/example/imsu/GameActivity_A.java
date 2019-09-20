@@ -22,7 +22,7 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
     final static String LEVEL_NAME = Strings.level1;
 
     // current Player
-    Player currentPlayer;
+    static Player currentPlayer;
 
     // player score
     static int playerScore = 30000;
