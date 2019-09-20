@@ -29,7 +29,6 @@ public class FragmentLevelCompleted extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup container, Bundle savedInstanceState) {
         View v = layoutInflater.inflate(R.layout.fragment_fragment_level_completed, container, false);
-
         /*
         // set Text View level Name
         TextView levelName = v.findViewById(R.id.txtView_level);
@@ -38,11 +37,14 @@ public class FragmentLevelCompleted extends DialogFragment {
         // set Text View level Score
         TextView playerScore = v.findViewById(R.id.txtView_score);
         int levelScore = GameActivity_A.getPlayerScore();
-        playerScore.setText(levelScore); */
+        playerScore.setText(levelScore);*/
 
         Button btnNextLevel = v.findViewById(R.id.btn_nextLevel);
         btnNextLevel.setOnClickListener(args -> {
             Intent nextLevelIntent = new Intent(getActivity(),GameActivity_C.class);
+            nextLevelIntent.putExtra(Strings.extra_imsu_levelID,GameActivity_A.LEVEL_ID);
+            nextLevelIntent.putExtra(Strings.extra_imsu_levelName,GameActivity_A.LEVEL_NAME);
+            nextLevelIntent.putExtra(Strings.extra_imsu_levelScore,GameActivity_A.getPlayerScore());
             startActivity(nextLevelIntent);
         });
 
