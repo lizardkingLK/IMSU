@@ -109,7 +109,7 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
         imgView4_earth.startAnimation(rotate);
 
         // show skb
-        animateX(imgView5_skb, animFadeIn, 0);
+        animateX(imgView5_skb, animFadeIn);
 
         // prism 1 on click listener
         imgView1.setOnClickListener(view -> {
@@ -166,20 +166,20 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
                             animateY(imgs, animFadeIn);
 
                             try {
-                                Thread.sleep(0);
-                                animateX(imgView4_earth, animFadeOut, 1);
+                                Thread.sleep(1000);
+                                animateX(imgView4_earth, animFadeOut);
                                 imgView4_earth.setImageResource(R.drawable.imsu_blast_earth_2);
-                                animateX(imgView4_earth, animFadeIn, 1);
+                                animateX(imgView4_earth, animFadeIn);
                             }
                             catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
 
                             // hide light beams
-                            animateX(imgView6_lb1, animFadeOut, 0);
-                            animateX(imgView7_lb2, animFadeOut, 0);
-                            animateX(imgView8_lb3, animFadeOut, 0);
-                            animateX(imgView9_lb4, animFadeOut, 0);
+                            animateX(imgView6_lb1, animFadeOut);
+                            animateX(imgView7_lb2, animFadeOut);
+                            animateX(imgView8_lb3, animFadeOut);
+                            animateX(imgView9_lb4, animFadeOut);
 
                             // show bad earth
                             imgView4_earth.setVisibility(View.VISIBLE);
@@ -222,18 +222,18 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
                     switch (rating) {
                         case 2:
                             imgView10_ratingA.setImageResource(R.drawable.rating_star_imsu_empty);
-                            animateX(imgView10_ratingA, animFadeOut,0);
-                            animateX(imgView10_ratingA, animFadeIn,0);
+                            animateX(imgView10_ratingA, animFadeOut);
+                            animateX(imgView10_ratingA, animFadeIn);
                             break;
                         case 1:
                             imgView11_ratingB.setImageResource(R.drawable.rating_star_imsu_empty);
-                            animateX(imgView11_ratingB, animFadeOut,0);
-                            animateX(imgView11_ratingB, animFadeIn,0);
+                            animateX(imgView11_ratingB, animFadeOut);
+                            animateX(imgView11_ratingB, animFadeIn);
                             break;
                         case 0:
                             imgView12_ratingC.setImageResource(R.drawable.rating_star_imsu_empty);
-                            animateX(imgView12_ratingC, animFadeOut,0);
-                            animateX(imgView12_ratingC, animFadeIn,0);
+                            animateX(imgView12_ratingC, animFadeOut);
+                            animateX(imgView12_ratingC, animFadeIn);
                             break;
                     }
                 }
@@ -256,41 +256,22 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
     }
 
     // fading Animations
-    public void animateX(ImageView iv, Animation anim, int myReqCode) {
+    public void animateX(ImageView iv, Animation anim) {
         anim.reset();
         iv.clearAnimation();
         iv.startAnimation(anim);
-
-        anim.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                if(myReqCode == 1) {
-
-                }
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
     }
 
     // beam animator
     public void animateY(final ImageView[] imgs, final Animation anim) {
         for(ImageView img:imgs) {
-            animateX(img, anim,1);
+            animateX(img, anim);
         }
     }
 
     // alignment checker
     public boolean alignmentCheck(int countState, int initialState) {
-        return countState%4 == 0 || initialState%4 == 0;
+        return countState%4 == 0;
     }
 
     public static int getPlayerScore() {
@@ -311,3 +292,5 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
 
     }
 }
+
+

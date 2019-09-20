@@ -62,5 +62,9 @@
     <string name="Retry">RETRY</string>
     <string name="level_failed">LEVEL FAILED</string>
     <string name="fragment_dialog_failed">dialog failed</string>
+    <string name="L1">1</string>
+    <string name="L2">2</string>
+    <string name="L3">3</string>
+    <string name="L4">4</string>
 
 </resources>
