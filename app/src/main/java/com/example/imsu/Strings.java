@@ -6,4 +6,5 @@ public class Strings {
     public static String extra_imsu_levelID = "extra_imsu_levelID";
     public static String extra_imsu_levelName = "extra_imsu_levelName";
     public static String extra_imsu_levelScore = "extra_imsu_levelScore";
+    public static String level3 = "LEVEL 3";
 }

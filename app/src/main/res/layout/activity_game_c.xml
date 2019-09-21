@@ -70,8 +70,8 @@
 
     <ImageView
         android:id="@+id/imgView_prism_c1"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/content_description_prism"
@@ -81,8 +81,8 @@
 
     <ImageView
         android:id="@+id/imgView_prism_c2"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/content_description_prism"
@@ -92,50 +92,51 @@
 
     <ImageView
         android:id="@+id/imgView_prism_c3"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:contentDescription="@string/content_description_prism"
         app:layout_constraintBottom_toBottomOf="@+id/imgView_prism_c4"
-        app:layout_constraintStart_toEndOf="@+id/imageView13"
+        app:layout_constraintEnd_toEndOf="@+id/imgView_lightbeam_v2_c"
+        app:layout_constraintStart_toStartOf="@+id/imgView_lightbeam_v2_c"
         app:layout_constraintTop_toTopOf="@+id/imgView_prism_c4"
-        app:srcCompat="@drawable/satelite_imsu_3" />
+        app:srcCompat="@drawable/satelite_imsu_2" />
 
     <ImageView
         android:id="@+id/imgView_prism_c4"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="43dp"
         android:contentDescription="@string/content_description_prism"
-        app:layout_constraintBottom_toTopOf="@+id/imageView16"
-        app:layout_constraintEnd_toEndOf="@+id/imageView16"
-        app:layout_constraintStart_toStartOf="@+id/imageView16"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintBottom_toTopOf="@+id/imgView_lightbeam_v4_c"
+        app:layout_constraintEnd_toEndOf="@+id/imgView_lightbeam_v4_c"
+        app:layout_constraintStart_toStartOf="@+id/imgView_lightbeam_v4_c"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_lightbeam_h1_c"
         app:srcCompat="@drawable/satelite_imsu_3" />
 
     <ImageView
         android:id="@+id/imgView_prism_c5"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/content_description_prism"
         app:layout_constraintBottom_toBottomOf="@+id/imgView_prism_c6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16"
-        app:srcCompat="@drawable/satelite_imsu_1" />
+        app:layout_constraintTop_toBottomOf="@+id/imgView_lightbeam_v4_c"
+        app:srcCompat="@drawable/satelite_imsu_4" />
 
     <ImageView
         android:id="@+id/imgView_prism_c6"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="12dp"
         android:contentDescription="@string/content_description_prism"
-        app:layout_constraintBottom_toTopOf="@+id/imageView14"
-        app:layout_constraintEnd_toStartOf="@+id/imageView8"
-        app:srcCompat="@drawable/satelite_imsu_1" />
+        app:layout_constraintBottom_toTopOf="@+id/imgView_lightbeam_h5_c"
+        app:layout_constraintEnd_toStartOf="@+id/imgView_lightbeam_v5_c"
+        app:srcCompat="@drawable/satelite_imsu_3" />
 
     <ImageView
         android:id="@+id/imgView_skb_c"
@@ -145,14 +146,14 @@
         android:contentDescription="@string/content_description_skb"
         android:rotation="0"
         app:layout_constraintBottom_toBottomOf="@+id/imgView_wh_c2"
-        app:layout_constraintStart_toEndOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintStart_toEndOf="@+id/imgView_lightbeam_v2_c"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_lightbeam_v5_c"
         app:srcCompat="@drawable/skb_imsu" />
 
     <ImageView
         android:id="@+id/imgView_wh_c2"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="330dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="80dp"
@@ -170,15 +171,15 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/content_description_wormhole"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/imgView_lightbeam_v3_c"
+        app:layout_constraintStart_toStartOf="@+id/imgView_lightbeam_v3_c"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_lightbeam_h2_c"
         app:srcCompat="@drawable/wormhole_imsu_secondary" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imgView_lightbeam_h1_c"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/content_description_lightbeam"
         app:layout_constraintEnd_toStartOf="@+id/imgView_prism_c2"
@@ -187,8 +188,8 @@
         app:srcCompat="@drawable/lightbeam_imsu_vertical_unit" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="75dp"
+        android:id="@+id/imgView_lightbeam_v5_c"
+        android:layout_width="50dp"
         android:layout_height="0dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/content_description_lightbeam"
@@ -198,33 +199,33 @@
         app:srcCompat="@drawable/lightbeam_imsu_horizontal_unit" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imgView_lightbeam_v3_c"
         android:layout_width="75dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/content_description_lightbeam"
         app:layout_constraintBottom_toTopOf="@+id/imgView_skb_c"
-        app:layout_constraintEnd_toStartOf="@+id/imageView14"
+        app:layout_constraintEnd_toStartOf="@+id/imgView_lightbeam_h5_c"
         app:layout_constraintStart_toStartOf="@+id/imgView_skb_c"
         app:layout_constraintTop_toBottomOf="@+id/imgView_wh_c1"
         app:srcCompat="@drawable/lightbeam_imsu_horizontal_unit" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imgView_lightbeam_h3_c"
         android:layout_width="0dp"
         android:layout_height="75dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/content_description_lightbeam"
-        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintBottom_toTopOf="@+id/imgView_lightbeam_v3_c"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgView_wh_c1"
         app:layout_constraintTop_toTopOf="@+id/imgView_wh_c1"
         app:srcCompat="@drawable/lightbeam_imsu_vertical_unit" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/imgView_sun_c"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="91dp"
@@ -236,77 +237,75 @@
         app:srcCompat="@drawable/star_imsu_1" />
 
     <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="75dp"
+        android:id="@+id/imgView_lightbeam_v2_c"
+        android:layout_width="50dp"
         android:layout_height="0dp"
         android:contentDescription="@string/content_description_lightbeam"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
-        app:layout_constraintEnd_toEndOf="@+id/imageView11"
-        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintBottom_toTopOf="@+id/imgView_sun_c"
+        app:layout_constraintEnd_toEndOf="@+id/imgView_sun_c"
+        app:layout_constraintStart_toStartOf="@+id/imgView_sun_c"
         app:layout_constraintTop_toBottomOf="@+id/imgView_prism_c3"
         app:srcCompat="@drawable/lightbeam_imsu_horizontal_unit" />
 
     <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="75dp"
+        android:id="@+id/imgView_lightbeam_v1_c"
+        android:layout_width="50dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/content_description_lightbeam"
         app:layout_constraintBottom_toTopOf="@+id/imgView_prism_c5"
-        app:layout_constraintEnd_toStartOf="@+id/imageView17"
+        app:layout_constraintEnd_toStartOf="@+id/imgView_lightbeam_h4_c"
         app:layout_constraintStart_toStartOf="@+id/imgView_prism_c5"
         app:layout_constraintTop_toBottomOf="@+id/imgView_prism_c1"
         app:srcCompat="@drawable/lightbeam_imsu_horizontal_unit" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/imgView_lightbeam_h5_c"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/content_description_lightbeam"
         app:layout_constraintBottom_toBottomOf="@+id/imgView_wh_c2"
         app:layout_constraintEnd_toStartOf="@+id/imgView_wh_c2"
         app:layout_constraintStart_toEndOf="@+id/imgView_skb_c"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_lightbeam_v5_c"
         app:srcCompat="@drawable/lightbeam_imsu_vertical_unit" />
 
     <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:id="@+id/imgView_lightbeam_h2_c"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:layout_marginTop="43dp"
         android:layout_marginBottom="24dp"
         android:contentDescription="@string/content_description_lightbeam"
         app:layout_constraintBottom_toTopOf="@+id/imgView_wh_c1"
         app:layout_constraintEnd_toStartOf="@+id/imgView_prism_c4"
         app:layout_constraintStart_toEndOf="@+id/imgView_prism_c3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_lightbeam_h1_c"
         app:srcCompat="@drawable/lightbeam_imsu_vertical_unit" />
 
     <ImageView
-        android:id="@+id/imageView16"
+        android:id="@+id/imgView_lightbeam_v4_c"
         android:layout_width="75dp"
         android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="3dp"
         android:contentDescription="@string/content_description_lightbeam"
         app:layout_constraintBottom_toTopOf="@+id/imgView_prism_c6"
-        app:layout_constraintEnd_toStartOf="@+id/imageView8"
-        app:layout_constraintStart_toEndOf="@+id/imgView_wh_c1"
+        app:layout_constraintEnd_toEndOf="@+id/imgView_prism_c6"
+        app:layout_constraintStart_toStartOf="@+id/imgView_prism_c6"
         app:layout_constraintTop_toBottomOf="@+id/imgView_prism_c4"
         app:srcCompat="@drawable/lightbeam_imsu_horizontal_unit" />
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/imgView_lightbeam_h4_c"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/content_description_lightbeam"
         app:layout_constraintBottom_toBottomOf="@+id/imgView_prism_c5"
         app:layout_constraintEnd_toStartOf="@+id/imgView_prism_c6"
         app:layout_constraintStart_toEndOf="@+id/imgView_prism_c5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_lightbeam_v1_c"
         app:srcCompat="@drawable/lightbeam_imsu_vertical_unit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
