@@ -25,7 +25,15 @@ public class PauseGameActivity extends DialogFragment {
 
         Button btnNextLevel = v.findViewById(R.id.btn_nextLevel);
         btnNextLevel.setOnClickListener(args -> {
-            Intent nextLevelIntent = new Intent(getActivity(),GameActivity_A.class);
+            int currentLevel = Player.getInstance().getCurrentLevel();
+            GameActivity gm = null;
+
+            if(currentLevel == 1) gm = new GameActivity_A();
+            else if (currentLevel == 2) gm = new GameActivity_B();
+            else if(currentLevel == 3) gm = new GameActivity_C();
+            else if(currentLevel == 4) gm = new GameActivity_D();
+
+            Intent nextLevelIntent = new Intent(getActivity(), gm.getClass());
             startActivity(nextLevelIntent);
         });
 

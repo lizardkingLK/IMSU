@@ -67,6 +67,8 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
 
         // set current player
         currentPlayer = Player.getInstance();
+        currentPlayer.setCurrentLevel(LEVEL_ID);
+        currentPlayer.setPlayerScore(playerScore);
 
         // declare fadeIn and fadeOut
         animFadeIn = AnimationUtils.loadAnimation(this, R.anim.fadein);
@@ -208,6 +210,7 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
                                 setPlayerScore(10000);
 
                             // sets player score
+                            currentPlayer.setLevelScore(getPlayerScore());
                             currentPlayer.setPlayerScore(getPlayerScore() + playerScore);
 
                             // view next level button
