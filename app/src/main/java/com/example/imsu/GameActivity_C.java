@@ -1,8 +1,12 @@
 package com.example.imsu;
 
+import android.app.DialogFragment;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -13,13 +17,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class GameActivity_C extends AppCompatActivity {
+public class GameActivity_C extends AppCompatActivity implements GameActivity {
     // level details
     final static int LEVEL_ID = 3;
     final static String LEVEL_NAME = Strings.level3;
 
     private TextView playerName;
     private Button btn_blast; // blast button
+    private Button btn_nextLevel; // next level button
     private ImageView imgView1,imgView2,imgView3,imgView4,imgView5,imgView6; // prisms
     private ImageView imgView7; // skb
     private ImageView imgView8; // sun
@@ -57,6 +62,8 @@ public class GameActivity_C extends AppCompatActivity {
         setContentView(R.layout.activity_game_c);
 
         currentPlayer = Player.getInstance(); // set current player
+        currentPlayer.setCurrentLevel(LEVEL_ID);
+        currentPlayer.setPlayerScore(playerScore);
 
         animFadeIn = AnimationUtils.loadAnimation(this, R.anim.fadein); // fadeIn initialization
         animFadeOut = AnimationUtils.loadAnimation(this, R.anim.fadeout); // fadeOut initialization
@@ -102,6 +109,9 @@ public class GameActivity_C extends AppCompatActivity {
         imgView18.setVisibility(View.INVISIBLE);
 
         btn_blast = findViewById(R.id.btn_blast); // set blast button
+
+        btn_nextLevel = findViewById(R.id.btn_nextLevel_c); // set next level button and hide it
+        btn_nextLevel.setVisibility(View.INVISIBLE);
 
         // set rating stars
         imgView19 = findViewById(R.id.imgView_rating_A);
@@ -159,7 +169,209 @@ public class GameActivity_C extends AppCompatActivity {
             Prism.rotateClockWise(imgView6);
         });
 
+        // when blasting checks if the user aligned all prisms correctly
+        btn_blast.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.log_clicked_blast),getResources().getString(R.string.clicked_blast));
 
+            int winFlag = 0; // set win to 0
+
+            int q0 = skbRotateCount; // get skb rotate count
+
+            int p1 = prismRotateCount[0]; // rotate counts of satellites
+            int p2 = prismRotateCount[1];
+            int p3 = prismRotateCount[2];
+            int p4 = prismRotateCount[3];
+            int p5 = prismRotateCount[4];
+            int p6 = prismRotateCount[5];
+
+            // checking part
+            if(alignmentCheck(skbRotateCount))  {
+                // check the alignment parts of satellites
+                if(alignmentCheck(p1))  {
+                    if(alignmentCheck(p2))  {
+                        if(alignmentCheck(p3))  {
+                            if(alignmentCheck(p4))  {
+                                if(alignmentCheck(p5))  {
+                                    if(alignmentCheck(p6))  {
+                                        if(imgView16.getVisibility() == View.VISIBLE && imgView18.getVisibility() == View.VISIBLE) {
+                                            ImageView[] imgsOff = {imgView16,imgView18};
+                                            animateY(imgsOff, animFadeOut);
+
+                                            imgView16.setVisibility(View.INVISIBLE);
+                                            imgView18.setVisibility(View.INVISIBLE);
+                                        }
+
+                                        imgView11.setVisibility(View.VISIBLE);
+                                        imgView13.setVisibility(View.VISIBLE);
+
+                                        ImageView[] imgsOn = {imgView11,imgView13};
+                                        animateY(imgsOn, animFadeIn);
+
+
+                                        System.out.println(getResources().getString(R.string.level_completed));
+
+                                        imgView9.setVisibility(View.VISIBLE); // show the light beams
+                                        imgView10.setVisibility(View.VISIBLE);
+                                        imgView11.setVisibility(View.VISIBLE);
+                                        imgView12.setVisibility(View.VISIBLE);
+                                        imgView13.setVisibility(View.VISIBLE);
+                                        imgView14.setVisibility(View.VISIBLE);
+                                        imgView15.setVisibility(View.VISIBLE);
+                                        imgView16.setVisibility(View.VISIBLE);
+                                        imgView17.setVisibility(View.VISIBLE);
+                                        imgView18.setVisibility(View.VISIBLE);
+
+                                        ImageView[] imgs = {imgView9,imgView10,imgView11,imgView12,imgView13,imgView14,imgView15,imgView16,imgView17,imgView18};
+                                        animateY(imgs, animFadeIn);
+
+                                        try {
+                                            Thread.sleep(1000);
+                                            animateX(imgView8, animFadeOut);
+                                            imgView8.setImageResource(R.drawable.imsu_blast_earth_2);
+                                            animateX(imgView8, animFadeIn);
+                                        }
+                                        catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+
+                                        animateY(imgs, animFadeOut); // hides light beams
+
+                                        imgView8.setVisibility(View.VISIBLE); // show bad earth
+
+                                        levelToast = Toast.makeText(getApplicationContext(), R.string.level_completed, Toast.LENGTH_LONG); // shows level completed
+                                        levelToast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 16);
+                                        levelToast.show();
+
+                                        winFlag = 1; // set win to 1
+
+                                        if(rating == 3)
+                                            setPlayerScore(30000);
+                                        else if(rating == 2)
+                                            setPlayerScore(20000);
+                                        else if(rating == 1)
+                                            setPlayerScore(10000);
+
+                                        currentPlayer.setLevelScore(getPlayerScore()); // sets player score
+                                        currentPlayer.setPlayerScore(getPlayerScore() + playerScore);
+
+                                        btn_nextLevel.setVisibility(View.VISIBLE); // view next level button
+                                        animateZ(btn_nextLevel, animFadeIn);
+
+                                        hideBlastButton(btn_blast); // hides the blast button
+
+                                        // set next level onclick button
+                                        btn_nextLevel.setOnClickListener(view1 -> {
+                                            Intent nextLevelIntent = new Intent(GameActivity_C.this, GameActivity_D.class);
+                                            nextLevelIntent.putExtra(Strings.extra_imsu_levelID,GameActivity_C.LEVEL_ID);
+                                            nextLevelIntent.putExtra(Strings.extra_imsu_levelName,GameActivity_C.LEVEL_NAME);
+                                            nextLevelIntent.putExtra(Strings.extra_imsu_levelScore,GameActivity_C.getPlayerScore());
+                                            startActivity(nextLevelIntent);
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // check if won
+                if(winFlag == 0) {
+                    rating--;
+                    System.out.println(rating);
+
+                    switch (rating) {
+                        case 2:
+                            imgView19.setImageResource(R.drawable.rating_star_imsu_empty);
+                            animateX(imgView19, animFadeOut);
+                            animateX(imgView19, animFadeIn);
+                            break;
+                        case 1:
+                            imgView20.setImageResource(R.drawable.rating_star_imsu_empty);
+                            animateX(imgView20, animFadeOut);
+                            animateX(imgView20, animFadeIn);
+                            break;
+                        case 0:
+                            imgView21.setImageResource(R.drawable.rating_star_imsu_empty);
+                            animateX(imgView21, animFadeOut);
+                            animateX(imgView21, animFadeIn);
+                            break;
+                    }
+                }
+
+                if (rating == 0 || rating < 0) {
+                    System.out.println(getResources().getString(R.string.level_failed));
+                    setPlayerScore(0); // setScore
+
+                    // shows level failed
+                    levelToast = Toast.makeText(getApplicationContext(), R.string.level_failed, Toast.LENGTH_LONG);
+                    levelToast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 16);
+                    levelToast.show();
+
+                    hideBlastButton(btn_blast); // hides the blast button
+                }
+            }
+            else {
+                if(q0%4 == 2 || q0%4 == 1) {
+                    if(imgView11.getVisibility() == View.VISIBLE && imgView13.getVisibility() == View.VISIBLE) {
+                        ImageView[] imgsOff = {imgView16,imgView18};
+                        animateY(imgsOff, animFadeOut);
+
+                        imgView11.setVisibility(View.INVISIBLE);
+                        imgView11.setVisibility(View.INVISIBLE);
+                    }
+
+                    imgView16.setVisibility(View.VISIBLE); // make beams visible
+                    imgView18.setVisibility(View.VISIBLE);
+
+                    ImageView[] imgs = {imgView16,imgView18};
+                    animateY(imgs, animFadeIn);
+                }
+            }
+
+        });
+
+    }
+
+    // action when back hw button pressed
+    @Override
+    public void onBackPressed()
+    {
+        ft = getFragmentManager().beginTransaction();
+        String tag_A = getResources().getString(R.string.fragment_dialog);
+        Fragment prev = getFragmentManager().findFragmentByTag(tag_A);
+        if(prev != null) {
+            ft.remove(prev);
+        }
+
+        ft.addToBackStack(null);
+
+        DialogFragment dialogFragment = new PauseGameActivity();
+        dialogFragment.show(ft, tag_A);
+    }
+
+    // hide blast button
+    public void hideBlastButton(Button btn) {
+        animateZ(btn, animFadeOut);
+        btn.setVisibility(View.INVISIBLE);
+    }
+
+    // button animator
+    public void animateZ(Button btn, Animation anim) {
+        anim.reset();
+        btn.clearAnimation();
+        btn.startAnimation(anim);
+    }
+
+    // beam animator
+    public void animateY(final ImageView[] imgs, final Animation anim) {
+        for(ImageView img:imgs) {
+            animateX(img, anim);
+        }
+    }
+
+    // alignment checker
+    public boolean alignmentCheck(int countState) {
+        return countState%4 == 0;
     }
 
     // fading Animations
@@ -167,5 +379,23 @@ public class GameActivity_C extends AppCompatActivity {
         anim.reset();
         iv.clearAnimation();
         iv.startAnimation(anim);
+    }
+
+    public static void setPlayerScore(int playerScore) {
+        GameActivity_C.playerScore = playerScore;
+    }
+
+    public static int getPlayerScore() {
+        return playerScore;
+    }
+
+    @Override
+    public void saveGame() {
+
+    }
+
+    @Override
+    public void loadGame() {
+
     }
 }

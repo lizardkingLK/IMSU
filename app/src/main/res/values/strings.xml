@@ -71,5 +71,6 @@
     <string name="clicked_skb">clicked_skb</string>
     <string name="btn_Next">Next Level</string>
     <string name="game_paused">GAME PAUSED</string>
+    <string name="log_clicked_blast">log_clicked_blast</string>
 
 </resources>

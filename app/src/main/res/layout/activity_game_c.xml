@@ -58,8 +58,8 @@
 
     <TextView
         android:id="@+id/txtView_playerName"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/txt_nullValue_playerName"
@@ -307,5 +307,22 @@
         app:layout_constraintStart_toEndOf="@+id/imgView_prism_c5"
         app:layout_constraintTop_toBottomOf="@+id/imgView_lightbeam_v1_c"
         app:srcCompat="@drawable/lightbeam_imsu_vertical_unit" />
+
+    <Button
+        android:id="@+id/btn_nextLevel_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="16dp"
+        android:width="100dp"
+        android:background="@drawable/drawable_button_rounded"
+        android:text="@string/btn_Next"
+        android:textColor="@color/colorTextLight"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_blast"
+        app:layout_constraintEnd_toStartOf="@+id/btn_blast"
+        app:layout_constraintStart_toEndOf="@+id/txtView_playerName"
+        app:layout_constraintTop_toTopOf="@+id/btn_blast"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
