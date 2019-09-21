@@ -47,7 +47,7 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
 
     // initial states of prisms
     private static int i1 = 2;
-    private static int i2 = 4;
+    private static int i2 = 3;
     private static int i3 = 2;
 
     // rotate count
