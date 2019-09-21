@@ -42,9 +42,6 @@ public class FragmentLevelCompleted extends DialogFragment {
         Button btnNextLevel = v.findViewById(R.id.btn_nextLevel);
         btnNextLevel.setOnClickListener(args -> {
             Intent nextLevelIntent = new Intent(getActivity(),GameActivity_C.class);
-            nextLevelIntent.putExtra(Strings.extra_imsu_levelID,GameActivity_A.LEVEL_ID);
-            nextLevelIntent.putExtra(Strings.extra_imsu_levelName,GameActivity_A.LEVEL_NAME);
-            nextLevelIntent.putExtra(Strings.extra_imsu_levelScore,GameActivity_A.getPlayerScore());
             startActivity(nextLevelIntent);
         });
 
