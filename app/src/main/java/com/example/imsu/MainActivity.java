@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private MediaPlayer mainTheme;
+    private MediaPlayer mainTheme = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

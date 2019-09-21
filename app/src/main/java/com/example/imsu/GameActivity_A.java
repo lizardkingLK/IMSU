@@ -2,6 +2,7 @@ package com.example.imsu;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -35,6 +36,9 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
 
     // blast Button
     Button btn_blast;
+
+    // next level button
+    Button btn_nextLevel;
 
     // animation class variables
     Animation animFadeIn,animFadeOut;
@@ -97,6 +101,10 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
 
         // set blast button
         btn_blast = findViewById(R.id.btn_blast);
+
+        // set next level button and hide it
+        btn_nextLevel = findViewById(R.id.btn_nextLevel);
+        btn_nextLevel.setVisibility(View.INVISIBLE);
 
         // set rating stars
         imgView10_ratingA = findViewById(R.id.imgView_rating_A);
@@ -199,22 +207,29 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
                             else if(rating == 1)
                                 setPlayerScore(10000);
 
-                            // load game completed
-                            ft = getFragmentManager().beginTransaction();
-                            String tag_A = getResources().getString(R.string.fragment_dialog);
-                            Fragment prev = getFragmentManager().findFragmentByTag(tag_A);
-                            if(prev != null) {
-                                ft.remove(prev);
-                            }
+                            // sets player score
+                            currentPlayer.setPlayerScore(getPlayerScore() + playerScore);
 
-                            ft.addToBackStack(null);
+                            // view next level button
+                            btn_nextLevel.setVisibility(View.VISIBLE);
+                            animateZ(btn_nextLevel, animFadeIn);
 
-                            DialogFragment dialogFragment = new FragmentLevelCompleted();
-                            dialogFragment.show(ft, tag_A);
+                            // hides the blast button
+                            hideBlastButton(btn_blast);
+
+                            // set next level onclick button
+                            btn_nextLevel.setOnClickListener(view1 -> {
+                                Intent nextLevelIntent = new Intent(GameActivity_A.this, GameActivity_C.class);
+                                    nextLevelIntent.putExtra(Strings.extra_imsu_levelID,GameActivity_A.LEVEL_ID);
+                                    nextLevelIntent.putExtra(Strings.extra_imsu_levelName,GameActivity_A.LEVEL_NAME);
+                                    nextLevelIntent.putExtra(Strings.extra_imsu_levelScore,GameActivity_A.getPlayerScore());
+                                startActivity(nextLevelIntent);
+                            });
                         }
                     }
                 }
 
+                // check if won
                 if(winFlag == 0) {
                     rating--;
                     System.out.println(rating);
@@ -248,11 +263,39 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
                     levelToast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 16);
                     levelToast.show();
 
+                    // hides the blast button
+                    hideBlastButton(btn_blast);
 
+                    // retry button
+                    //
                 }
             }
+
         });
 
+    }
+
+    // action when back hw button pressed
+    @Override
+    public void onBackPressed()
+    {
+        ft = getFragmentManager().beginTransaction();
+        String tag_A = getResources().getString(R.string.fragment_dialog);
+        Fragment prev = getFragmentManager().findFragmentByTag(tag_A);
+        if(prev != null) {
+            ft.remove(prev);
+        }
+
+        ft.addToBackStack(null);
+
+        DialogFragment dialogFragment = new PauseGameActivity();
+        dialogFragment.show(ft, tag_A);
+    }
+
+    // hide blast button
+    public void hideBlastButton(Button btn) {
+        animateZ(btn, animFadeOut);
+        btn.setVisibility(View.INVISIBLE);
     }
 
     // fading Animations
@@ -267,6 +310,13 @@ public class GameActivity_A extends AppCompatActivity implements GameActivity {
         for(ImageView img:imgs) {
             animateX(img, anim);
         }
+    }
+
+    // button animator
+    public void animateZ(Button btn, Animation anim) {
+        anim.reset();
+        btn.clearAnimation();
+        btn.startAnimation(anim);
     }
 
     // alignment checker

@@ -176,4 +176,17 @@
             app:srcCompat="@drawable/rating_star_imsu_filled" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_nextLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:width="100dp"
+        android:background="@drawable/drawable_button_rounded"
+        android:text="@string/btn_Next"
+        android:textColor="@color/colorTextLight"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout_rating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout_rating" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

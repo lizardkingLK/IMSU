@@ -2,6 +2,7 @@ package com.example.imsu;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -24,11 +25,12 @@ public class GameActivity_C extends AppCompatActivity {
     private ImageView imgView8; // sun
     private ImageView imgView9,imgView10,imgView11,imgView12,imgView13; // light beams vertical
     private ImageView imgView14,imgView15,imgView16,imgView17,imgView18; // light beams horizontal
+    private ImageView imgView19,imgView20,imgView21; // rating stars
 
     static Player currentPlayer;
     static int playerScore = 30000; // player score
 
-    Animation animFadeIn,animFadeOut; // animation class variables
+    Animation animFadeIn,animFadeOut,rotate; // animation class variables
 
     Toast levelToast; // toast declaration
 
@@ -42,7 +44,10 @@ public class GameActivity_C extends AppCompatActivity {
     private static int i5 = 3; // clockwise
     private static int i6 = 3; // counter clockwise
 
+    private static int i7 = 2; // initial state of skb clockwise
+
     private static int[] prismRotateCount = new int[]{i1,i2,i3,i4,i5,i6}; // rotate count
+    private static int skbRotateCount = i7;
 
     private int rating = 3; // rating count
 
@@ -98,6 +103,69 @@ public class GameActivity_C extends AppCompatActivity {
 
         btn_blast = findViewById(R.id.btn_blast); // set blast button
 
-        //
+        // set rating stars
+        imgView19 = findViewById(R.id.imgView_rating_A);
+        imgView20 = findViewById(R.id.imgView_rating_B);
+        imgView21 = findViewById(R.id.imgView_rating_C);
+
+        // rotate the sun
+        rotate = AnimationUtils.loadAnimation(GameActivity_C.this, R.anim.rotate_imsu);
+        rotate.setFillAfter(true);
+        imgView8.startAnimation(rotate);
+
+        animateX(imgView7, animFadeIn); // show skb
+
+        // skb on click listener
+        imgView7.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.log_clicked_skb),getResources().getString(R.string.clicked_skb));
+            skbRotateCount++; // increases rotate count
+            Prism.rotateClockWise(imgView7); // call to rotate the skb
+        });
+
+        // prisms on click listener
+        imgView1.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.log_clicked_view_prism),getResources().getString(R.string.clicked_prism));
+            prismRotateCount[0]++; // increases rotate count
+            Prism.rotateClockWise(imgView1); // call to rotate the prism
+        });
+
+        imgView2.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.log_clicked_view_prism),getResources().getString(R.string.clicked_prism));
+            prismRotateCount[1]++;
+            Prism.rotateClockWise(imgView2);
+        });
+
+        imgView3.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.log_clicked_view_prism),getResources().getString(R.string.clicked_prism));
+            prismRotateCount[2]++;
+            Prism.rotateClockWise(imgView3);
+        });
+
+        imgView4.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.log_clicked_view_prism),getResources().getString(R.string.clicked_prism));
+            prismRotateCount[3]++;
+            Prism.rotateClockWise(imgView4);
+        });
+
+        imgView5.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.log_clicked_view_prism),getResources().getString(R.string.clicked_prism));
+            prismRotateCount[4]++;
+            Prism.rotateClockWise(imgView5);
+        });
+
+        imgView6.setOnClickListener(view -> {
+            Log.i(getResources().getString(R.string.log_clicked_view_prism),getResources().getString(R.string.clicked_prism));
+            prismRotateCount[5]++;
+            Prism.rotateClockWise(imgView6);
+        });
+
+
+    }
+
+    // fading Animations
+    public void animateX(ImageView iv, Animation anim) {
+        anim.reset();
+        iv.clearAnimation();
+        iv.startAnimation(anim);
     }
 }
