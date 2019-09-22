@@ -72,5 +72,10 @@
     <string name="btn_Next">Next Level</string>
     <string name="game_paused">GAME PAUSED</string>
     <string name="log_clicked_blast">log_clicked_blast</string>
+    <string name="content_description_threeway">Threeway</string>
+    <string name="content_description_moon">Moon</string>
+    <string name="content_description_mars">Mars</string>
+    <string name="log_clicked_threeway">log_clicked_threeway</string>
+    <string name="clicked_threeway">clicked_threeway</string>
 
 </resources>

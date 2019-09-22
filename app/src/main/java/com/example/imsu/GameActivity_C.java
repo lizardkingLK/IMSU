@@ -128,6 +128,22 @@ public class GameActivity_C extends AppCompatActivity implements GameActivity {
         // skb on click listener
         imgView7.setOnClickListener(view -> {
             Log.i(getResources().getString(R.string.log_clicked_skb),getResources().getString(R.string.clicked_skb));
+
+            if(imgView16.getVisibility() == View.VISIBLE && imgView18.getVisibility() == View.VISIBLE) {
+                ImageView[] imgsOff = {imgView16,imgView18};
+                animateY(imgsOff, animFadeOut);
+
+                imgView16.setVisibility(View.INVISIBLE);
+                imgView18.setVisibility(View.INVISIBLE);
+            }
+            else if(imgView11.getVisibility() == View.VISIBLE && imgView13.getVisibility() == View.VISIBLE) {
+                ImageView[] imgsOff = {imgView16,imgView18};
+                animateY(imgsOff, animFadeOut);
+
+                imgView11.setVisibility(View.INVISIBLE);
+                imgView11.setVisibility(View.INVISIBLE);
+            }
+
             skbRotateCount++; // increases rotate count
             Prism.rotateClockWise(imgView7); // call to rotate the skb
         });
@@ -148,13 +164,13 @@ public class GameActivity_C extends AppCompatActivity implements GameActivity {
         imgView3.setOnClickListener(view -> {
             Log.i(getResources().getString(R.string.log_clicked_view_prism),getResources().getString(R.string.clicked_prism));
             prismRotateCount[2]++;
-            Prism.rotateClockWise(imgView3);
+            Prism.rotateCounterClockWise(imgView3);
         });
 
         imgView4.setOnClickListener(view -> {
             Log.i(getResources().getString(R.string.log_clicked_view_prism),getResources().getString(R.string.clicked_prism));
             prismRotateCount[3]++;
-            Prism.rotateClockWise(imgView4);
+            Prism.rotateCounterClockWise(imgView4);
         });
 
         imgView5.setOnClickListener(view -> {
@@ -166,7 +182,7 @@ public class GameActivity_C extends AppCompatActivity implements GameActivity {
         imgView6.setOnClickListener(view -> {
             Log.i(getResources().getString(R.string.log_clicked_view_prism),getResources().getString(R.string.clicked_prism));
             prismRotateCount[5]++;
-            Prism.rotateClockWise(imgView6);
+            Prism.rotateCounterClockWise(imgView6);
         });
 
         // when blasting checks if the user aligned all prisms correctly
@@ -207,21 +223,9 @@ public class GameActivity_C extends AppCompatActivity implements GameActivity {
                                         ImageView[] imgsOn = {imgView11,imgView13};
                                         animateY(imgsOn, animFadeIn);
 
-
                                         System.out.println(getResources().getString(R.string.level_completed));
 
-                                        imgView9.setVisibility(View.VISIBLE); // show the light beams
-                                        imgView10.setVisibility(View.VISIBLE);
-                                        imgView11.setVisibility(View.VISIBLE);
-                                        imgView12.setVisibility(View.VISIBLE);
-                                        imgView13.setVisibility(View.VISIBLE);
-                                        imgView14.setVisibility(View.VISIBLE);
-                                        imgView15.setVisibility(View.VISIBLE);
-                                        imgView16.setVisibility(View.VISIBLE);
-                                        imgView17.setVisibility(View.VISIBLE);
-                                        imgView18.setVisibility(View.VISIBLE);
-
-                                        ImageView[] imgs = {imgView9,imgView10,imgView11,imgView12,imgView13,imgView14,imgView15,imgView16,imgView17,imgView18};
+                                        ImageView[] imgs = {imgView9,imgView10,imgView11,imgView12,imgView13,imgView14,imgView15,imgView17};
                                         animateY(imgs, animFadeIn);
 
                                         try {
@@ -235,6 +239,17 @@ public class GameActivity_C extends AppCompatActivity implements GameActivity {
                                         }
 
                                         animateY(imgs, animFadeOut); // hides light beams
+
+                                        imgView9.setVisibility(View.INVISIBLE); // hide light beams
+                                        imgView10.setVisibility(View.INVISIBLE);
+                                        imgView11.setVisibility(View.INVISIBLE);
+                                        imgView12.setVisibility(View.INVISIBLE);
+                                        imgView13.setVisibility(View.INVISIBLE);
+                                        imgView14.setVisibility(View.INVISIBLE);
+                                        imgView15.setVisibility(View.INVISIBLE);
+                                        imgView16.setVisibility(View.INVISIBLE);
+                                        imgView17.setVisibility(View.INVISIBLE);
+                                        imgView18.setVisibility(View.INVISIBLE);
 
                                         imgView8.setVisibility(View.VISIBLE); // show bad earth
 
@@ -273,42 +288,6 @@ public class GameActivity_C extends AppCompatActivity implements GameActivity {
                         }
                     }
                 }
-
-                // check if won
-                if(winFlag == 0) {
-                    rating--;
-                    System.out.println(rating);
-
-                    switch (rating) {
-                        case 2:
-                            imgView19.setImageResource(R.drawable.rating_star_imsu_empty);
-                            animateX(imgView19, animFadeOut);
-                            animateX(imgView19, animFadeIn);
-                            break;
-                        case 1:
-                            imgView20.setImageResource(R.drawable.rating_star_imsu_empty);
-                            animateX(imgView20, animFadeOut);
-                            animateX(imgView20, animFadeIn);
-                            break;
-                        case 0:
-                            imgView21.setImageResource(R.drawable.rating_star_imsu_empty);
-                            animateX(imgView21, animFadeOut);
-                            animateX(imgView21, animFadeIn);
-                            break;
-                    }
-                }
-
-                if (rating == 0 || rating < 0) {
-                    System.out.println(getResources().getString(R.string.level_failed));
-                    setPlayerScore(0); // setScore
-
-                    // shows level failed
-                    levelToast = Toast.makeText(getApplicationContext(), R.string.level_failed, Toast.LENGTH_LONG);
-                    levelToast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 16);
-                    levelToast.show();
-
-                    hideBlastButton(btn_blast); // hides the blast button
-                }
             }
             else {
                 if(q0%4 == 2 || q0%4 == 1) {
@@ -328,6 +307,41 @@ public class GameActivity_C extends AppCompatActivity implements GameActivity {
                 }
             }
 
+            // check if won
+            if(winFlag == 0) {
+                rating--;
+                System.out.println(rating);
+
+                switch (rating) {
+                    case 2:
+                        imgView19.setImageResource(R.drawable.rating_star_imsu_empty);
+                        animateX(imgView19, animFadeOut);
+                        animateX(imgView19, animFadeIn);
+                        break;
+                    case 1:
+                        imgView20.setImageResource(R.drawable.rating_star_imsu_empty);
+                        animateX(imgView20, animFadeOut);
+                        animateX(imgView20, animFadeIn);
+                        break;
+                    case 0:
+                        imgView21.setImageResource(R.drawable.rating_star_imsu_empty);
+                        animateX(imgView21, animFadeOut);
+                        animateX(imgView21, animFadeIn);
+                        break;
+                }
+            }
+
+            if (rating == 0 || rating < 0) {
+                System.out.println(getResources().getString(R.string.level_failed));
+                setPlayerScore(0); // setScore
+
+                // shows level failed
+                levelToast = Toast.makeText(getApplicationContext(), R.string.level_failed, Toast.LENGTH_LONG);
+                levelToast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 16);
+                levelToast.show();
+
+                hideBlastButton(btn_blast); // hides the blast button
+            }
         });
 
     }
