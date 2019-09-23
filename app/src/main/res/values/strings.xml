@@ -77,5 +77,11 @@
     <string name="content_description_mars">Mars</string>
     <string name="log_clicked_threeway">log_clicked_threeway</string>
     <string name="clicked_threeway">clicked_threeway</string>
+    <string name="content_description">Jupiter</string>
+    <string name="content_description_bridge">Bridge</string>
+    <string name="content_description_venus">Venus</string>
+    <string name="content_description_planetx">PlanetX</string>
+    <string name="log_clicked_bridge">log_clicked_bridge</string>
+    <string name="clicked_bridge">clicked_bridge</string>
 
 </resources>

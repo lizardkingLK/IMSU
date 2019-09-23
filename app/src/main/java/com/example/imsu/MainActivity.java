@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
     private MediaPlayer mainTheme = null;
 
     @Override
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
             Intent myIntent = new Intent(MainActivity.this,
                     PlayActivity.class);
             startActivity(myIntent);
+
+
         });
 
         // loads ScoreBoard
